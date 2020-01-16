@@ -1,0 +1,57 @@
+/* remember to use fancy-header in the headers you want it in. */
+.fancy-header {
+    color: darkslateblue;
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: lightcoral;
+    text-decoration: underline;
+}
+
+body {
+    background-color: lightpink;
+    background-image: url("../img/background1.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ibarra Real Nova', serif;
+    color: snow;
+}
+
+p {
+    text-align: center;
+}
+
+ul {
+    list-style: circle;
+}
+
+tr, td {
+    padding: 4px 2px;
+    border: solid coral;
+}
+
+a:link {
+    color: coral;
+}
+
+a:visited {
+    color: violet;
+}
+
+a:hover {
+    color: lightslategrey;
+}
+
+a:active {
+    color: yellow;
+}
+
+hr {
+    border-top: 1px solid snow;
+}
+
