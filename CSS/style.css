@@ -1,0 +1,5 @@
+/* remember to use fancy-header in the headers you want it in. */
+.fancy-header {
+    color: purple;
+    text-decoration: underline;
+}
