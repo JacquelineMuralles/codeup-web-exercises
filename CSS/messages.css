@@ -6,10 +6,10 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
-.message-info, .message-success, .message-warning, .message-error {
-    width: 94%;
-    margin: 1em;
-    padding: 8px;
+.message {
+
+    margin: .25em;
+    padding: .5em;
     border: 1px solid lightgray;
     border-radius: 5px;
     --bg-info: #cddeff;
