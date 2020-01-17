@@ -31,9 +31,15 @@ ul {
     list-style: circle;
 }
 
-tr, td {
-    padding: 4px 2px;
+/*tr, td {
+    padding: 1px;
     border: solid pink;
+    border-radius: 3px;
+}
+*/
+table {
+    border: solid pink;
+    border-radius: 3px;
 }
 
 a:link {
@@ -57,7 +63,7 @@ hr {
 }
 
 img {
-    opacity: .9;
+    opacity: .8;
     border-radius: 5px;
     box-shadow: 0 0 3px 1px pink;
 }
