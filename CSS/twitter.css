@@ -100,21 +100,21 @@ a {
 }
 .profile-details {
     float: left;
-    width: calc(25% - .10em);
-    margin: .5em 0;
+    width: calc(25% - 1em);
+    margin: 0 .5em;
 }
 
 .timeline {
     float: left;
-    width: calc(50% - .10em);
-    margin: .5em 0;
+    width: calc(50% - 1em);
+    margin: 0 .5em;
 
 }
 
 .who-to-follow {
     float: right;
-    width: calc(25% - .10em);
-    margin: .5em 0;
+    width: calc(25% - 1em);
+    margin: 0 .5em;
 }
 
 .container {
