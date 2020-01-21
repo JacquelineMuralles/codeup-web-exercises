@@ -4,14 +4,6 @@ body, html {
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
-}
-
-.message {
-
-    margin: .25em;
-    padding: .5em;
-    border: 1px solid lightgray;
-    border-radius: 5px;
     --bg-info: #cddeff;
     --bg-success: #cff3da;
     --bg-warning: #fcfbc9;
@@ -20,6 +12,14 @@ body, html {
     --text-success: #07662f;
     --text-warning: #87730b;
     --text-error: #770824;
+}
+
+.message {
+
+    margin: .25em;
+    padding: .5em;
+    border: 1px solid lightgray;
+    border-radius: 5px;
 
 }
 
