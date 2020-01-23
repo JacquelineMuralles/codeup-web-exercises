@@ -60,18 +60,13 @@ body {
 /*flex solution*/
 .cover {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-
-
     /* flex container */
 }
 .flex-form {
+    margin: auto;
     display: flex;
     /*justify-content: space-evenly;*/
-    justify-content: flex-end;
+
 
 
 
@@ -79,9 +74,6 @@ body {
     /* flex items */
 }
 .destination {
-    display: flex;
-    width: 30%;
-
-
+    flex-basis: 15em;
     /* bigger item */
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Fundamentals</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        main {
+            background: lightgreen;
+            display: grid;
+            text-align: center;
+            grid-template-columns: repeat(3, 200px);
+            /*for repeat(#ofRows,#ofUnits)
+            use the same unit of measurement
+            throughout.
+            Columns controls the width of grid cells.*/
+            grid-template-rows: repeat(3, 200px);
+            /*Rows control the height of grid cells.*/
+
+            /*grid-gap: 50px;*/
+
+            /*its either grid-gap or grid-column-gap & grid-row-gap
+            not both.*/
+            grid-column-gap: 10px;
+            grid-row-gap: 25px;
+
+        }
+        main div {
+            font-size: 2em;
+            color: white;
+            background: grey;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</main>
+</body>
+</html>
