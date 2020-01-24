@@ -1,0 +1,159 @@
+body {
+    display: grid;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 1fr 80% 10% 1fr;
+    grid-template-columns: 1fr 60% 2fr;
+    grid-template-areas:
+    "nav nav nav"
+    "menu main ads"
+    "menu footer footer"
+    "menu belowFoot belowFoot";
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    background-color: #000000;
+    grid-area: nav;
+    color: white;
+}
+
+.navItems {
+    width: 30vw;
+    padding: 0 7px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.navItems #1 {
+    background-color: #333333;
+}
+.navItems #2, #3, #4, #5, #6, #7 {
+    padding: 10px;
+}
+
+
+.menu {
+    background-color: #F0F0F0;
+    grid-area: menu;
+}
+.menuItems {
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+#headMenu {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 13px 5px;
+}
+.menuItems #a, #b, #c, #d {
+    padding: 5px;
+}
+
+
+main {
+    background-color: white;
+    grid-area: main;
+}
+main .main-numbers {
+    padding: 0;
+    margin: 30px 15px 0 0;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+.main-numbers #pg1, #pg2, #pg3, #pg4, #pg5, #pgEnd {
+    padding: 5px;
+}
+h1 {
+    margin: 1em;
+    color: #419388;
+}
+p {
+    margin: 1em 1em 8em 1em;
+    font-size: 12px;
+}
+
+.ads {
+    width: 100%;
+    background-color: white;
+    grid-area: ads;
+    display: grid;
+    grid-template-rows: 25px 50px 25px 50px 25px 50px;
+    grid-template-columns:;
+    grid-template-areas:
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6";
+
+}
+.block1 {
+    grid-area: 1;
+    border: 1px solid #CCCCCC;
+}
+.block2 {
+    grid-area: 2;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 25px;
+}
+.block3 {
+    grid-area: 3;
+    border: 1px solid #CCCCCC;
+
+}
+.block4 {
+    grid-area: 4;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 25px;
+
+}
+.block5 {
+    grid-area: 5;
+    border: 1px solid #CCCCCC;
+
+}
+.block6 {
+    grid-area: 6;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 50px;
+
+}
+footer {
+    padding-left: 10px;
+    background-color: #666666;
+    grid-area: footer;
+    color: white;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.belowFoot {
+    padding-left: 10px;
+    background-color: #333333;
+    grid-area: belowFoot;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 10px;
+}
