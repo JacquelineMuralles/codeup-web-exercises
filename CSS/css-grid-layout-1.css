@@ -23,20 +23,13 @@ header {
     background-color: #FCD800;
     grid-area: header;
     display: flex;
-    /*width: 100vw;*/
     flex-direction: column;
 
 }
 nav {
     padding: 10px;
     background-color: #FCD800;
-    /*width: 2fr;*/
     grid-area: nav;
-    display: flex;
-    justify-content: flex-start;
-
-
-
 }
 article {
     padding: 10px;
@@ -44,21 +37,18 @@ article {
     grid-area: article;
     display: flex;
     flex-direction: column;
-    /*width: 6fr*/
+
 
 }
 .ads {
     padding: 10px;
     background-color: #FCD800;
-    /*width: 2fr;*/
-
     grid-area: ads;
 }
 footer {
     padding: 10px;
     grid-area: footer;
     background-color: #FCD800;
-    /*width: 8fr;*/
 
 }
 
