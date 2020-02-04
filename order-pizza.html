@@ -48,72 +48,118 @@
     <!--Jumbotron End-->
 
 
-<!-- Main page content -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-<!-- Your custom JS goes here -->
 
 <h2>Build your own pizza!</h2>
 
 <!--Nav Tabs Start-->
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
 
-        <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+            <span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
+        <a class="nav-link" id="cheese-sauce-tab" data-toggle="tab" href="#cheese-sauce" role="tab" aria-controls="cheese-sauce" aria-selected="false">
+            <span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+        <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false">
+            <span class="badge badge-pill badge-secondary">3</span> Toppings</a>
     </li>
 </ul>
 <!--Nav Tabs End-->
 
-<!--Choose size and crust Start-->
-<div class="card">
-    <div class="card-header card text-white bg-primary mb-3">
-        Choose size and crust
-    </div>
-    <div class="card-body">
+<div class="tab-content" id="myTabContent">
 
-        <div class="card w-100" style="width: 18rem;">
-            <div class="card-header">
-                Hand Tossed
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item">Small(10")</li>
-                <li class="list-group-item">Medium(12")</li>
-            </ul>
+<!--Choose size and crust TAB Start-->
+    <div class="card tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="card-header card text-white bg-primary mb-3">
+            Choose size and crust
         </div>
-        <div>
+        <div class="card-body">
+
+            <div class="card w-100" style="width: 18rem;">
+                <div class="card-header">
+                    Hand Tossed
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                    <li class="list-group-item">
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1"> Small ("10")</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">
+                        <label class="form-check-label" for="inlineRadio2"> Medium ("12")</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+                <br>
+            <div class="card w-100" style="width: 18rem;">
+                <div class="card-header">
+                    Crispy Thin
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                    <li class="list-group-item">
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
+                        <label class="form-check-label" for="inlineRadio3"> Medium ("12")</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option1">
+                        <label class="form-check-label" for="inlineRadio4"> Small ("10")</label>
+                        </div>
+                    </li>
+                </ul>
+        </div>
             <br>
-        <div class="card w-100" style="width: 18rem;">
-            <div class="card-header">
-                Crispy Thin
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                <li class="list-group-item">Medium(12")</li>
-                <li class="list-group-item">Large(14")</li>
-            </ul>
+        <div class="card-footer bg-light text-right">
+            <a href="#" class="btn btn-primary">Next Step ></a>
         </div>
     </div>
-    <div class="card-footer text-right">
-        <a href="#" class="btn btn-primary">Next Step ></a>
+<!--Choose size and crust TAB End-->
+
+<!--Cheese and Sauce TAB Start-->
+    <div class="card tab-pane fade" id="cheese-sauce" role="tabpanel" aria-labelledby="cheese-sauce-tab">
+        <div class="card-header card text-white bg-primary mb-3">
+            Choose Cheese and Sauce
+        </div>
+
     </div>
-</div>
-<!--Choose size and crust End-->
+
+<!--Cheese and Sauce TAB End-->
+
+<!--Toppings TAB Start-->
+    <div class="card tab-pane fade" id="topping" role="tabpanel" aria-labelledby="toppings-tab">
+        <div class="card-header card text-white bg-primary mb-3">
+            Choose Toppings
+        </div>
+
+    </div>
+<!--Toppings TAB End-->
+
 
 </div>
+
+    <!-- Main page content -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+    <!-- Your custom JS goes here -->
 </body>
 </html>
