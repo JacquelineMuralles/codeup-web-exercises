@@ -127,13 +127,25 @@
 
 // Make a function named isVowel(letter)
     function isVowel (letter) {
-        return letter = "a,e,i,0,u,A,E,I,O,U";
+        return "aeiouAEIOU".indexOf(letter) !== -1;
     }
-    console.log(isVowel(A));
-    console.log(isVowel(r));
-    console.log(isVowel(e));
+    // console.log(isVowel("A"));
+    // console.log(isVowel("r"));
+    // console.log(isVowel("e"));
+
+
 // Make a function named isConsonant(letter)
+    function isConsonant(letter){
+        return "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".indexOf(letter) !== -1;
+    }
+    // console.log(isConsonant("a"));
+    // console.log(isConsonant("z"));
+
+
 // Make a function named isCapital(letter)
+    function isCapital(letter) {
+        return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(letter) !== -1;
+    }
 // Make a function named isLowerCase(letter)
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 // Make a function named isSpace(letter) that returns if a character is a space character
