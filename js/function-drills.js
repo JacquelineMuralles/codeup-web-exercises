@@ -147,6 +147,9 @@
         return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(letter) !== -1;
     }
 // Make a function named isLowerCase(letter)
+    function isLowerCase(letter) {
+        return "abcdefghijklmnopqrstuvwxyz".indexOf(letter) !== -1;
+    }
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 // Make a function named isSpace(letter) that returns if a character is a space character
 // Make a function named isZero(number)

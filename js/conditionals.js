@@ -17,38 +17,33 @@
  */
 var numConfirm = confirm("Would you like to enter a number?");
 var enterNum = prompt("Please enter a number:");
+
+    //Confirmation: would you like to enter a number? y/n
     if (numConfirm === true) {
-        userNum(enterNum)
+        userNum(enterNum)//if yes: prompt to enter a number
     }else {
-        alert("Thank you, goodbye.")
-    //if no: alert thank you, goodbye
+        alert("Thank you, goodbye.")//if no: alert thank you, goodbye
 }
     function userNum(number) {
-    //Confirmation: would you like to enter a number? y/n
-    //      if yes: prompt to enter a number
-
-        //alert if user does not enter number
-        if (isNaN(number)) {
+        if (isNaN(number)) {//alert if user does not enter number
             alert("This is not a number.");
-        } else {
-            //we know we're working with #'s now
-            // alert if # is even or odd
-            if (enterNum % 2 === 0) {
+        } else {//we know we're working with #'s now
+            if (enterNum % 2 === 0) { // alert if # is even or odd
                 alert("Your number is even");
             } else if (enterNum % 2 !== 0) {
                 alert("Your number is odd");
             }
-            //alert if # is: neg or pos
-
-            if (enterNum < 0) {
+            if (enterNum < 0) {//alert if # is: neg or pos
                 alert("Your number is negative");
             } else if (enterNum > 0) {
                 alert("Your number is positive");
+            }else {
+                alert("Your number is zero")
             }
-            return number + 100;
-            //alert what # + 100 is
+            return number + 100;//return # + 100
         }
 }
+
 
 /* ########################################################################## */
 
@@ -145,21 +140,19 @@ alert(analyzeColor(askColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calulateTotal(luckyNumber, total){
+function calculateTotal(luckyNumber, total){
     if(luckyNumber === 0) {
         return total;
     }else if(luckyNumber === 1){
         return total - (total * .10);
     }else if(luckyNumber === 2) {
-        return total - (total * .20);
+        return total - (total * .25);
     }else if(luckyNumber === 3) {
-        return total - (total * .30);
+        return total - (total * .35);
     }else if(luckyNumber === 4) {
-        return total - (total * .40);
+        return total - (total * .50);
     }else if(luckyNumber === 5) {
-        return "Everything is free!"
-    }else {
-        return "sorry, I don't understand"
+        return total - (total * 1);
     }
 }
 /**
@@ -171,3 +164,4 @@ function calulateTotal(luckyNumber, total){
  */
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
+console.log(calculateTotal(luckyNumber, 300));
