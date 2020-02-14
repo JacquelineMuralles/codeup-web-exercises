@@ -28,6 +28,17 @@
 
     console.log("Mercury <br> Venus <br> Earth <br> Mars <br> Jupiter <br> Saturn <br> Uranus <br> Neptune");
 
-    console.log("<ul> <li>Mercury</li> <li>Venus</li> <li>Earth</li>  <li>Mars</li> <li>Jupiter</li>  <li>Saturn</li> <li>Uranus</li> <li>Neptune</li></ul>");
+    // var list = document.createElement('ul');
+    // planetsArray.forEach(function (planet) {
+    //     var li = document.createElement('li');
+    //     li.textContent = planet;
+    //     list.appendChild(li);
+    // });
+    // console.log(list);
 
+    console.log("<ul>");
+    planetsArray.forEach(function (planet) {
+        console.log("<li>" + planet + "</li>");
+    });
+    console.log("</ul>")
 })();
