@@ -12,10 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    var person = {
-    person.firstName = "Jacqueline";
-    person.lastName = "Muralles";
-
+//     var person = {
+//     firstName: "Jacqueline",
+//     lastName : "Muralles"
+// };
 
     /**
      * TODO:
@@ -28,15 +28,11 @@
      */
 
 
-    person.sayHello = function () {
-        return ("Hello from " + this.firstName + " " + this.lastName);
-    };
-    person.logsayHello = function () {
-        console.log("Hello from " + this.firstName + " " + this.lastName)
-
-    };
-}
-    console.log(person.logsayHello());
+    // person.sayHello = function () {
+    //     return "Hello from " + this.firstName + " " + this.lastName;
+    // };
+    //
+    // console.log(person.sayHello());
 
 
     /** TODO:
@@ -54,11 +50,22 @@
      */
 
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    function discount(shoppers) {
+        shoppers.forEach(function(shopper){
+            if(shopper.amount > 200){
+                console.log("Shopper " + shopper.name + " has earned a 12% discount by having a cart totalling $" + shopper.amount.toFixed(2) + ". After the discount of $" + (shopper.amount * .12).toFixed(2) + " was applied, " + shopper.name + "owes $" (shopper.amount - (shopper.amount * .12)).toFixed(2) + ".");
+            }else {
+                console.log("shopper " + shopper.name + " did not spend more than $200. Total due is $" + shopper.amount);
+            }
+        });
+
+    // }
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -72,7 +79,36 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [
+        {
+            title: "Our Lady of the Nile",
+            author: {
+                firstName: "Scholastique",
+                lastName: "Mukasonga"
+            }
+        },
+        {
+            title: "White Tiger",
+            author: {
+                firstName: "Aravind",
+                lastName: "Adiga"
+            }
+        },
+        {
+            title: "Things Fall Apart",
+            author: {
+                firstName: "Chinua",
+                lastName: "Achebe"
+            }
+        }
 
+
+    ];
+
+    books.forEach(function (book:,index) {
+        console.log("Book #" + (index + 1) + "\nTitle: " + book.title + "\nAuthor: " + book.author.firstName + " " + book.author.lastName);
+
+    });
 
     /**
      * TODO:
