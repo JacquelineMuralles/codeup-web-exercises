@@ -100,9 +100,21 @@
                 firstName: "Chinua",
                 lastName: "Achebe"
             }
-        }
-
-
+        },
+        {
+            title: "The Fire Next Time",
+            author: {
+                firstName: "James",
+                lastName: "Baldwin"
+            }
+        },
+        {
+            title: "A House of My Own",
+            author:{
+                firstName: "Sandra",
+                lastName: "Cisneros"
+            }
+        },
     ];
 
     books.forEach(function (book:,index) {
