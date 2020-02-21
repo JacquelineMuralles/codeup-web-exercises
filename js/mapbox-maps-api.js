@@ -36,19 +36,21 @@ var markOptions = {
 //array of restaurant objects
 var favoriteRestaurants = [
     {
-        name: "<h2>The Art of Donut</h2>",
+        name: "<h2>Liberty House</h2>",
         information: {
-            address: "<p>3428 N St Mary's St, San Antonio, TX 78212</p>",
-            hours: "<p>7am - 3pm</p>",
-            phone: "<p>(210)265-5425</p>",
+            address: "<p>1111 S Alamo St, San Antonio, TX 78210</p>",
+            hours: "<p>9am - 12am</p>",
+            phone: "<p>(210) 227-1187</p>",
+            reservation: "<p><a href='http://www.liberty-bar.com/contact'>Reserve a seat</a></p>"
         }
     },
     {
-       name: "<h2>Original Donut Shop</h2>",
+       name: "<h2>Eastside Ktchentte</h2>",
         information: {
-            address: "<p>3307 Fredericksburg Rd, San Antonio, TX 78201</p> ",
-            hours: "<p>6am - 6pm</p>",
-            phone: "<p>(210)734-5661</p>",
+            address: "<p>2119, I-35, San Antonio, TX 78208</p> ",
+            hours: "<p>7:30am - 8pm</p>",
+            phone: "<p>(210) 507-2568</p>",
+            reservation: "<p><a href='https://www.eastsidekitchenette.com/reservations/'> Reserve a seat</a></p>",
         }
     },
     {
@@ -57,15 +59,25 @@ var favoriteRestaurants = [
             address: "<p>2604 S Hackberry, San Antonio, TX 78210</p>",
             hours: "<p>6am - 8:30pm</p>",
             phone: "<p>(210) 532-3767</p>",
+            reservation: "<p>No reservation needed: in and out bakery.</p>",
         }
-    }
+    },
+    {
+        name: "<h2>Ida Claire</h2>",
+        information: {
+            address: "<p>7300 Jones Maltsberger Rd, San Antonio, TX 78209</p>",
+            hours: "<p>7am - 11pm</p>",
+            phone: "<p>(210) 667-2145</p>",
+            reservation: "<a href='https://www.opentable.com/restref/client/?rid=1050298&restref=1050298&corrid=eb2ea772-a59c-4c83-89a6-a18604c1523e'>Reserve a seat</a>",
+        }
+    },
 ];
 
 //for loop which calls upon array of restaurant objects to place popups and markers
 favoriteRestaurants.forEach(function (restaurant) {
     geocode(restaurant.information.address, mapboxToken).then(function (result) {
         var popup = new mapboxgl.Popup(popOptions)
-            .setHTML(restaurant.name + restaurant.information.address + restaurant.information.hours + restaurant.information.phone);
+            .setHTML(restaurant.name + restaurant.information.address + restaurant.information.hours + restaurant.information.phone + restaurant.information.reservation);
         var marker = new mapboxgl.Marker(markOptions)
             .setLngLat(result)
             .setPopup(popup)
