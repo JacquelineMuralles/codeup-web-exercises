@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Using jQuery</h1>
+<p>I will be able to access and manipulate functions and css properties a lot easier and faster than before.</p>
+<div class="list">
+    <h2 id="list-title">Reasons to use jQuery</h2>
+    <ul>
+        <li>Faster</li>
+        <li>Easier</li>
+        <li>Less Code Clutter</li>
+        <li>Using Something New Is Always Fun!</li>
+    </ul>
+</div>
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+    "use strict";
+$(document).ready(function() {
+    $('li').css('font-size', '20px');
+    $('<h1>').css('text-decoration', '')
+});
+</script>
+
+</body>
+</html>
