@@ -23,10 +23,23 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script type="text/javascript">
     "use strict";
-$(document).ready(function() {
-    $('li').css('font-size', '20px');
-    $('<h1>').css('text-decoration', '')
-});
+    $(document).ready(function() {
+        $('h1').click(function(){
+                $(this).css('background-color', 'red');
+        });
+
+        $('p').dblclick(function () {
+            $(this).css('font-size', '18px');
+        });
+
+        $('li').hover(
+            function () {
+                $(this).css('color', 'red');
+            },
+            function () {
+                $(this).css('color', 'black');
+            });
+    });
 </script>
 
 </body>
