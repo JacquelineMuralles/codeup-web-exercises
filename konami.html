@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <link rel="stylesheet" href="CSS/animista.css">
+    <style>
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: lightpink;
+        }
+        p{
+            text-align: center;
+            font-size: 25px;
+            color: lightblue;
+        }
+        .color-change-4x {
+            -webkit-animation: color-change-4x 6s linear infinite alternate both;
+            animation: color-change-4x 6s linear infinite alternate both;
+        }
+        .text-flicker-in-glow {
+            -webkit-animation: text-flicker-in-glow 4s linear both;
+            animation: text-flicker-in-glow 4s linear both;
+        }
+        .text-flicker-in-glow-2 {
+            -webkit-animation: text-flicker-in-glow 7s linear both;
+            animation: text-flicker-in-glow 7s linear both;
+        }
+        .flip-diagonal-1-fwd {
+            -webkit-animation: flip-diagonal-1-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+            animation: flip-diagonal-1-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }
+        .kenburns-bottom {
+            -webkit-animation: kenburns-bottom 5s ease-out both;
+            animation: kenburns-bottom 5s ease-out both;
+        }
+        img {
+            margin-left: 550px;
+            height: 450px;
+        }
+
+    </style>
+</head>
+<body class="color-change-4x">
+<h1 class="text-flicker-in-glow">Konami Code</h1>
+<img src="" class="kenburns-bottom" alt="">
+<div id="sound"></div>
+<p class="text-flicker-in-glow-2">Let's get started...</p>
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+var bucket = [];
+var i = 0;
+
+    $(document).keyup(function(event){
+    var key = event.keyCode;
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var paris = [49, 48, 48, 13];
+    var what = [49, 49, 49, 13];
+    var sound = new Audio ("thatHaot.mp3");
+        if(key === konamiCode[i]) {
+            i++;
+            if (i === 11) {
+                alert("You win!");
+                i = 0;
+            }
+        }else if(key === paris[i]) {
+            i++;
+            if (i === 4) {
+                girlOnFire();
+                i = 0;
+            }
+        }else if(key === what[i]) {
+            i++;
+            if (i === 4) {
+                alert("What were you thinking?");
+                i = 0;
+            }
+        }else{
+                alert("Game Over");
+                i = 0;
+            }
+    });
+function girlOnFire() {
+    $('h1').html("That's Hot!");
+    $('img').attr('src', 'img/paris-h.jpg');
+    $('p').html("YOU'RE ON FIRE!");
+    $('.text-flicker-in-glow-2').css('color', 'red');
+    var phAudio = new Audio("sound/thatsHot.mp3");
+    phAudio.play();
+}
+
+
+</script>
+</body>
+</html>

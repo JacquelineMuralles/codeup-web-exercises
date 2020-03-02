@@ -23,7 +23,6 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script type="text/javascript">
     "use strict";
-    $(document).ready(function() {
         $('h1').click(function(){
                 $(this).css('background-color', 'red');
         });
@@ -34,12 +33,12 @@
 
         $('li').hover(
             function () {
-                $(this).css('color', 'red');
+                $('li').css('color', 'red');
             },
             function () {
-                $(this).css('color', 'black');
+                $('li').css('color', 'black');
             });
-    });
+
 </script>
 
 </body>
