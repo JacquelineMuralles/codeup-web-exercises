@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Park FAQ</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Simonetta&display=swap" rel="stylesheet">
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+        dl {
+
+        }
+        dt {
+            font-family: 'Dosis', sans-serif ;
+        }
+        dd {
+            font-family: sans-serif ;
+        }
+
+    </style>
+</head>
+<body>
+<dl>
+    <dt>#Dangerous</dt>
+    <dd class="invisible">With the launch of instagram once secluded areas of national parks have started to flood with tourists causing a hike in injuries and deaths.</dd>
+
+    <br>
+
+    <dt>Beary Scary</dt>
+    <dd class="invisible">Grizzly Bear #122 of Banff National Park is the largest bear in the area, has eaten a couple black bears, has fathered 5 cubs, and was hit by a train and lived.</dd>
+
+    <br>
+
+    <dt>Yellow Hot</dt>
+    <dd class="invisible">Yellowstone National Park’s geothermal hot springs are capable of dissolving a human body overnight.</dd>
+
+    <br>
+
+    <dt>No Place Like Home</dt>
+    <dd class="invisible">There is a legendary hobo rock climber known as “Chongo” who, while illegally living inside Yosemite National Park almost a decade, made a life by scavenging food, ascending sheer rock faces and writing a book called “The Homeless Interpretation of Quantum Mechanics”.</dd>
+
+    <br>
+
+    <dt>Zone of Death</dt>
+    <dd class="invisible">There is 50 sq. mile area of the U.S. within Yellowstone National Park dubbed the “Zone of Death.” Legal scholars assert that due to certain technicalities involving finding a suitable jury, a person could potentially murder someone and not have to stand trial. </dd>
+
+    <br>
+
+    <dt>Don't Drink the Water</dt>
+    <dd class="invisible">The wild bison of Yellowstone National Park have adapted to utilize the local hot springs as bidets to clean the thick fur of their nether regions before mating.</dd>
+
+    <br>
+
+    <dt>Cursed</dt>
+    <dd class="invisible">Anyone who removes Hawaiian rocks from the islands is said to be cursed. Every year people mail back thousands of pounds of rock, sand, and shells to Hawaii Volcanoes National Park, many with reports of how their lives were ruined by the curse.</dd>
+
+    <br>
+
+    <dt>In the Name of Tourism</dt>
+    <dd class="invisible">There is an area in Ohio called Helltown which became abandoned in the 1970’s when the U.S. government drove citizens from their homes through eminent domain to form national parks.</dd>
+
+    <br>
+
+    <dt>Isa Lake</dt>
+    <dd class="invisible">Isa Lake in Yellowstone National Park is the only lake in the world that drains to 2 separate oceans.</dd>
+
+    <br>
+
+    <dt>The Value of Nature</dt>
+    <dd class="invisible">A report found that, for every $1 invested in the U.S. National Park Service, the American public receives $4 in economic value.</dd>
+
+</dl>
+
+<h3>Big Bend</h3>
+<ul>
+    <li>In 2012, the park was named as an International Dark Sky Park. Big Bend National Park has the darkest measured skies in the lower 48 states, and star gazing here is obviously superb.</li>
+    <li>There are 56 species of reptiles, 75 species of mammals, more than 450 species of birds, along with at least 1,200 species of plants.</li>
+    <li>Big Bend National Park covers a total area of 801,163 acres.</li>
+    <li>The entrance fee for Big Bend is $30 per vehicle per week.</li>
+</ul>
+
+
+<h3>Grand Canyon</h3>
+<ul>
+    <li>It took 3-6 million years to form; erosion continues to alter its contours.</li>
+    <li>It is populated by five Indian tribes: The Hopi, Navajo, Havasupai, Paiute, and Hualapai.</li>
+    <li>Grand Canyon creates its own weather.</li>
+    <li>Supai Village is located at the base of Grand Canyon within the Havasupai Indian Reservation. Inaccessible by road and with a population of just 208, it is the most remote community in the lower 48 states, and is the only place where mail is still delivered by pack mule. </li>
+</ul>
+
+<h3>Olympic</h3>
+<ul>
+    <li>Olympic protects a region of the North America’s remaining temperate rain forests.</li>
+    <li>On the Ozette Triangle trail and Wedding Rocks, a rocky outcropping on the coastline showcases carvings of whales, hunters, and other symbols left by the Makah tribe.</li>
+    <li>The Olympic Mountains formed over 30 million years ago.</li>
+    <li>There are 60 named glaciers on the peaks of the Olympics and over two hundred that remain unnamed.</li>
+</ul>
+
+<h3>Yellowstone</h3>
+<ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+
+<button>Highlight Facts</button>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+        $('dt').click(function (e) {
+            e.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+        $('dt').click(function () {
+            $(this).css('background-color', 'yellow');
+        });
+        $('button').click(function () {
+            $('ul').each(function () {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
+        $('h3').click(function () {
+            $('ul').each(function () {
+                $(this).children().css('font-weight', 'bold');
+            });
+        });
+        $('li').click(function () {
+            $('ul').each(function (index) {
+                $(this).children().first().css('color', 'blue');
+            })
+        })
+
+
+
+
+
+</script>
+</body>
+</html>
