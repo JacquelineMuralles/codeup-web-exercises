@@ -17,10 +17,42 @@
         dd {
             font-family: sans-serif ;
         }
+        div {
+            width: 550px;
+            height: 350px;
+            border: #9BCE0A solid 3px;
+            border-radius: 5%;
+        }
+        .bigBend {
+            background-image: url("img/bigbend.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+        .grandCanyon {
+            background-image: url("img/grandcanyon.jpg");
+            background-position: center;
+            background-size: cover;
+
+        }
+        .olympic {
+            background-image: url("img/olympic.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+        #exercise3 {
+            border: none;
+            width: auto;
+            height: auto;
+        }
 
     </style>
 </head>
 <body>
+<div id="exercise3">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>x</span>
+</div>
+<h2>Please register for the site.</h2>
 <dl>
     <dt>#Dangerous</dt>
     <dd class="invisible">With the launch of instagram once secluded areas of national parks have started to flood with tourists causing a hike in injuries and deaths.</dd>
@@ -73,28 +105,36 @@
 </dl>
 
 <h3>Big Bend</h3>
+<div class="bigBend">
+
+</div>
+<button id="bb">Switch</button>
 <ul>
-    <li>In 2012, the park was named as an International Dark Sky Park. Big Bend National Park has the darkest measured skies in the lower 48 states, and star gazing here is obviously superb.</li>
-    <li>There are 56 species of reptiles, 75 species of mammals, more than 450 species of birds, along with at least 1,200 species of plants.</li>
-    <li>Big Bend National Park covers a total area of 801,163 acres.</li>
-    <li>The entrance fee for Big Bend is $30 per vehicle per week.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
 </ul>
 
 
 <h3>Grand Canyon</h3>
+<div class="grandCanyon">
+
+</div>
+<button id="gc">Switch</button>
 <ul>
-    <li>It took 3-6 million years to form; erosion continues to alter its contours.</li>
-    <li>It is populated by five Indian tribes: The Hopi, Navajo, Havasupai, Paiute, and Hualapai.</li>
-    <li>Grand Canyon creates its own weather.</li>
-    <li>Supai Village is located at the base of Grand Canyon within the Havasupai Indian Reservation. Inaccessible by road and with a population of just 208, it is the most remote community in the lower 48 states, and is the only place where mail is still delivered by pack mule. </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </li>
 </ul>
 
 <h3>Olympic</h3>
 <ul>
-    <li>Olympic protects a region of the North America’s remaining temperate rain forests.</li>
-    <li>On the Ozette Triangle trail and Wedding Rocks, a rocky outcropping on the coastline showcases carvings of whales, hunters, and other symbols left by the Makah tribe.</li>
-    <li>The Olympic Mountains formed over 30 million years ago.</li>
-    <li>There are 60 named glaciers on the peaks of the Olympics and over two hundred that remain unnamed.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
 </ul>
 
 <h3>Yellowstone</h3>
@@ -104,8 +144,7 @@
     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
 </ul>
-
-<button>Highlight Facts</button>
+<button id="highlight">Highlight Facts</button>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -117,7 +156,7 @@
         $('dt').click(function () {
             $(this).css('background-color', 'yellow');
         });
-        $('button').click(function () {
+        $('#highlight').click(function () {
             $('ul').each(function () {
                 $(this).children().last().css('background-color', 'yellow');
             });
@@ -131,9 +170,20 @@
             $('ul').each(function (index) {
                 $(this).children().first().css('color', 'blue');
             })
-        })
+        });
+        $('span').click(function () {
+            $(this).parent().hide();
+        });
+        $('h3').each(function () {
+            $('ul').children().hide()
+        });
+        $('h3').click(function () {
+        $(this).next().next().next().children().slideToggle()
+        });
+        $('h2').hide().delay(8000).fadeIn(2000)
 
 
+        // $('h2').show(8000);
 
 
 
