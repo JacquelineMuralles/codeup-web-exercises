@@ -1,34 +1,51 @@
 [
     {
-        "title": "Hammer",
-        "quantity": 25,
+        "title": "Typewriter",
+        "year": 1965,
         "categories": [
-            "tool"
+            "office",
+            "writing"
         ],
-        "price": 20
+        "price": 70
     }, {
-        "title": "Drill",
-        "quantity": 5,
+        "title": "Record Player",
+        "year": 1976,
         "categories": [
-            "tool",
-            "powered"
+            "music",
+            "devices"
         ],
         "price": 100
     }, {
-        "title": "Mower",
-        "quantity": 5,
+        "title": "Rotary Vintage 1920's Telephone",
+        "year": 1927,
         "categories": [
-            "tool",
-            "gas",
-            "outdoor"
+            "devices",
+            " home decor"
         ],
         "price": 200
     }, {
-        "title": "Screwdrivers",
-        "quantity": 25,
+        "title": "White French Doors, blurred glass",
+        "year": 1925,
         "categories": [
-            "tool"
+            "home decor",
+            "furniture"
         ],
-        "price": 10
+        "price": 100
+    }, {
+    "title": "Blue Baby Stroller",
+    "year": 1965,
+    "categories": [
+        "baby"
+    ],
+    "price": 10
+    }, {
+    "title": "Gold Lamp",
+    "year": 1948,
+    "categories": [
+        "home decor",
+        " furniture"
+    ],
+    "price": 198
     }
 ]
+
