@@ -21,19 +21,29 @@ $(document).ready(function () {
         coordinates.innerHTML =
             'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
     }
-    map.addControl(
-        new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl
-        })
-    );
-
-    // geocoder.on('result', function(e) {
-    //     console.log("results!!!");
-    //     console.log(e);
-    //     //explore "e" to find the coordinates
-    // });
     marker.on('dragend', getWeather);
+
+    // map.addControl(
+    //     new MapboxGeocoder({
+    //         accessToken: mapboxgl.accessToken,
+    //         mapboxgl: mapboxgl
+    //     })
+    // );
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxToken,
+        mapboxgl: mapboxgl,
+    });
+    map.addControl(geocoder);
+
+    geocoder.on('result', function(e) {
+        console.log(e);
+        var latLng ={};
+        latLng.lng = e.result.geometry.coordinates[0];
+        latLng.lat = e.result.geometry.coordinates[1];
+        //explore "e" to find the coordinates
+        marker.setLngLat(latLng);
+        getWeather()
+    });
 
     var myIcons = [
         {
