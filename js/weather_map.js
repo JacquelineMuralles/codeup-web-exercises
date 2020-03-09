@@ -1,19 +1,40 @@
 "use strict";
-
+$(document).ready(function () {
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
         zoom: 10,
-        center: [-98.4916,29.4252],
+        center: [-98.4916, 29.4252],
         boxZoom: true,
     });
 
-$(document).ready(function () {
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.4916, 29.4252])
+        .addTo(map);
 
-$.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4252,-98.4916").done(function (data) {
-    console.log(data);
-    console.log(new Date(data.currently.time * 1000));
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML =
+            'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+    }
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        })
+    );
+
+    // geocoder.on('result', function(e) {
+    //     console.log("results!!!");
+    //     console.log(e);
+    //     //explore "e" to find the coordinates
+    // });
+    marker.on('dragend', getWeather);
+
     var myIcons = [
         {
             icon: 'clear-day',
@@ -37,71 +58,78 @@ $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ 
         },
         {
             icon: 'wind',
-            image: '<img src="img/windy.png" alt="">'
+            image: '<img src="img/wind.png" alt="">'
         },
         {
             icon: 'fog',
-            image: '<img src="img/cloudy.png" alt="">'
+            image: '<img src="img/fog.png" alt="">'
         },
         {
             icon: 'cloudy',
-            image: '<img src="img/cloudy.png" alt="">'
+            image: '<img src="img/cloudy-day.png" alt="">'
         },
         {
             icon: 'partly-cloudy-day',
-            image: '<img src="part-cloud-day.png" alt="">'
+            image: '<img src="img/partly-cloudy-day.png" alt="">'
         },
         {
             icon: 'partly-cloudy-night',
-            image: '<img src="part-cloud-night.png" alt="">'
+            image: '<img src="img/partly-cloudy-night.png" alt="">'
         }
     ];
 
-    var dayInfo = {};
-    var bucket = [];
+    function getWeather() {
+        $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + marker.getLngLat().lat + "," + marker.getLngLat().lng).done(function (data) {
+            console.log(data);
+            console.log(new Date(data.currently.time * 1000));
+            var dayInfo = {};
+            var bucket = [];
+            for (var i = 0; i <= 2; i++) {
+                dayInfo = {};
+                dayInfo.highTemp = data.daily.data[i].apparentTemperatureMax;
+                dayInfo.lowTemp = data.daily.data[i].apparentTemperatureMin;
+                dayInfo.icon = data.daily.data[i].icon;
+                dayInfo.precip = data.daily.data[i].precipProbability;
+                dayInfo.humidity = data.daily.data[i].humidity;
+//     /* given a query in the form "lng, lat" or "lat, lng" returns the matching
+                dayInfo.windSpeed = data.daily.data[i].windSpeed;
+                dayInfo.uv = data.daily.data[i].uvIndex;
+                bucket.push(dayInfo)
 
-    for (var i = 0; i <= 2; i++){
-            dayInfo = {};
-            dayInfo.highTemp = data.daily.data[i].apparentTemperatureMax;
-            dayInfo.lowTemp = data.daily.data[i].apparentTemperatureMin;
-            dayInfo.icon = data.daily.data[i].icon;
-            dayInfo.precip = data.daily.data[i].precipProbability;
-            dayInfo.humidity = data.daily.data[i].humidity;
-            dayInfo.windSpeed = data.daily.data[i].windSpeed;
-            dayInfo.uv = data.daily.data[i].uvIndex;
-            bucket.push(dayInfo)
-        }
-    function addImage() {
-        var iconBucket = [];
-        myIcons.forEach(function (icon) {
-            if (dayInfo.icon === icon.icon){
-                iconBucket.push(icon.image);
+
             }
-        });
-                return iconBucket.toString();
-        // for (var i = 0; i <= myIcons.length; i++){
-            console.log(iconBucket);
+            function addImage() {
+                var iconBucket = [];
+                myIcons.forEach(function (item) {
+                    if (data.daily.data[i].icon === item.icon) {
+                        iconBucket.push(item.image);
+                    }
+                });
+                return iconBucket[0];
+
+            }
+
+            console.log(addImage());
+            for (var i = 0; i <= 2; i++) {
+                var cardClass = ".info-" + i;
+                $(cardClass).html(
+                    bucket[i].highTemp + "/" + bucket[i].lowTemp +
+                    "<br>" +
+                    bucket[i].icon +
+                    "<br>" +
+                    addImage()+
+                    '<br>' +
+                    'Precipitation ' + bucket[i].precip +
+                    '<br>' +
+                    'Humidity ' + bucket[i].humidity +
+                    '<br>' +
+                    'Wind Speed ' + bucket[i].windSpeed +
+                    '<br>' +
+                    'UV Index ' + bucket[i].uv
+                );
+            }
+
+        })
     }
-
-    for (var i = 0; i <= 2; i++){
-            var cardClass = ".info-" + i;
-            $(cardClass).html(
-                bucket[i].highTemp + "/" + bucket[i].lowTemp +
-                "<br>" +
-                bucket[i].icon +
-                "<br>" +
-                addImage() +
-                '<br>' +
-                'Precipitation ' + bucket[i].precip +
-                '<br>' +
-                'Humidity ' + bucket[i].humidity +
-                '<br>' +
-                'Wind Speed ' + bucket[i].windSpeed +
-                '<br>' +
-                'UV Index ' + bucket[i].uv
-            );
-        }
-});
-
-
+    getWeather();
 });
