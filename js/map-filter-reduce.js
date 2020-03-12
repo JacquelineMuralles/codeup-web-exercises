@@ -37,7 +37,7 @@ const users = [
     }
 ];
 $(document).ready(function(){
-let filterLanguage = users.filter(user => (user.languages).length > 2);
+let filterLanguage = users.filter(user => user.languages.length > 2);
     // console.log(filterLanguage);
 
 let getEmail = users.map(user => user.email);
@@ -62,13 +62,21 @@ let longEmailES6 = users.reduce((currentLongest, user) => user.email.length > cu
     // console.log(longEmailES6);
 
 let nameStr = users.reduce((Namecount, user) => user.id === 1 || user.id === 2 || user.id === 3 || user.id === 4 ? Namecount + user.name + ", " : Namecount + user.name + ".", "Your instructors are: ");
-    // console.log(nameStr);
+    console.log(nameStr);
+
+let names = users.reduce((sentence, user) => sentence === '' ? user.name : sentence + ', ' + user.name,'');
+    console.log("Your instructors are: " + names + '.');
+
+
+
 
 // let uniqueLang = users.reduce((langCount, user) => langCount.split(", ") === (user.languages.split(", "))? langCount: langCount + user.languages + ", ", "Total languages: ");
     let uniqueLang = users.reduce(function (langCount, ) {
 
-    })
+    });
     console.log(uniqueLang);
+
+
 
 
 });
