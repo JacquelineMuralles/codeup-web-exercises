@@ -42,21 +42,18 @@
 //  b. in order from most recent to oldest (w/in 30 days)
 //  c.
 
-const getDate = userName => fetch("https://api.github.com/users/" + userName + "/events", {headers: {'Authorization': "token 7d11c4d564fb20411b7d1b9fc66c7252b17390dc"}})
+const getDate = userName => {
+    fetch("https://api.github.com/users/" + userName + "/events", {headers: {'Authorization': gitToken}})
         .then(response => response.json())
-        .then(data => data.filter(data => (data.type === "PushEvent")
-        .then(data => {
-            let latestCommits = data[0].payload.commits;
-            let latest = latestCommits[latestCommits.length-1].url;
-            return fetch(latest)
-                .then(response => {
-                return response.json()
-            })})
-            .then((data) =>{
-                let dateData = data.commit.committer.date;
-            })))
-            }
-
-        ));
+        .then(response => response.filter(item => item.type === "PushEvent"))
+        .then(item => item[0].payload.commits)
+        .then(item => item[item.length -1].url)
+        .then(item => fetch(item, {'Authorization' : gitToken}))
+        .then(item => item.json())
+        .then(item => (item.commit.author.date))
+        .then(item => {
+            $('h1').html(new Date(item))
+        });
+};
 
 console.log(getDate('jacquelinemuralles'));
